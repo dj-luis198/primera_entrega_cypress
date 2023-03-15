@@ -41,6 +41,7 @@ Cypress.Commands.add('xdblclick',(xpath)=>{
 }
 )
 
+
 //---------------Commands get----------------//
 
 Cypress.Commands.add('gtype',(locator,text)=>{
@@ -50,5 +51,10 @@ Cypress.Commands.add('gtype',(locator,text)=>{
 
 Cypress.Commands.add('gclick',(locator)=>{
     cy.get(locator).click();
+}
+)
+
+Cypress.Commands.add('gdblclick',(locator)=>{
+    cy.get(locator).dblclick();
 }
 )
