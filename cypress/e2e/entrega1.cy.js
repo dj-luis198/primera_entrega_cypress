@@ -1,7 +1,19 @@
 /// <reference types="cypress"/>
 
-describe('empty spec', () => {
+const { RegisterPage } = require('../support/pages/registerPage');
+const { LoginPage } = require('../support/pages/loginPage');
+const { NavBarPage } = require('../support/pages/navBarPage');
+const { HomePage } = require('../support/pages/homePage');
+//const { ProductListPage } = require('../support/pages/productListPage');
+//const { ShoppingCartPage } = require('../support/pages/shoppingCartPage');
+
+describe('empty spec', {retries:2}, () => {
 let loginData, productData;
+
+const registerPage= new RegisterPage();
+const loginPage= new LoginPage();
+const navBarPage= new NavBarPage();
+const homePage= new HomePage();
 
   before('before',()=>{
 
@@ -16,12 +28,10 @@ let loginData, productData;
 
   beforeEach("beforeEach",()=>{
     cy.visit("/");
-    cy.xpath('//span[@id="registertoggle"]').dblclick();
-    cy.xpath('//input[@id="user"]').type(loginData.user);
-    cy.xpath('//input[@id="pass"]').type(loginData.password);
-    cy.xpath('//button[@id="submitForm"]').click();
-    cy.xpath('//h2[contains(text(),loginData.user)]').should('exist');
-    cy.xpath('//a[@id="onlineshoplink"]').click();
+    registerPage.dblClickLogin();
+    loginPage.login(loginData.user,loginData.password)
+    navBarPage.returnUser(loginData.user).should('exist');
+    homePage.clickOnlineShop();
 })
 
   it('passes', () => {
