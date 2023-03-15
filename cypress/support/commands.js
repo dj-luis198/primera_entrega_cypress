@@ -23,3 +23,32 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+//---------------Commands xpath----------------//
+
+Cypress.Commands.add('xtype',(xpath,text)=>{
+    cy.xpath(xpath).type(text);
+}
+)
+
+Cypress.Commands.add('xclick',(xpath)=>{
+    cy.xpath(xpath).click();
+}
+)
+
+Cypress.Commands.add('xdblclick',(xpath)=>{
+    cy.xpath(xpath).dblclick();
+}
+)
+
+//---------------Commands get----------------//
+
+Cypress.Commands.add('gtype',(locator,text)=>{
+    cy.get(locator).type(text);
+}
+)
+
+Cypress.Commands.add('gclick',(locator)=>{
+    cy.get(locator).click();
+}
+)

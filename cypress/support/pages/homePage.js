@@ -5,6 +5,6 @@ export class HomePage{
     }
 
     clickOnlineShop(){
-        cy.get( this.onlineShopLink).click();
+        cy.gclick( this.onlineShopLink);
     }
 }

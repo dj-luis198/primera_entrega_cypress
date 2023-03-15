@@ -5,6 +5,6 @@ export class RegisterPage {
     }
     
     dblClickLogin() {
-        cy.xpath(this.loginLink).dblclick();
+        cy.xdblclick( this.loginLink);
     }
 }
