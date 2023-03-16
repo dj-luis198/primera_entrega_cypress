@@ -7,11 +7,11 @@ export class LoginPage {
     }
 
     typeUser(user) {
-        cy.xtype(this.userInput,user);
+        cy.xtype(this.userInput, user);
     };
 
     typePassword(password) {
-        cy.xtype(this.passwordInput,password);
+        cy.xtype(this.passwordInput, password);
     };
 
     clickLogIn() {
