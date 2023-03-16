@@ -1,3 +1,5 @@
+const constants = require('../support/constants');
+
 export class ProductListPage{
 
     constuctor(){
