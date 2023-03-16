@@ -1,10 +1,10 @@
 export class RegisterPage {
 
-    constructor(){
-        this.loginLink='//span[@id="registertoggle"]';
+    constructor() {
+        this.loginLink = '//span[@id="registertoggle"]';
     }
-    
+
     dblClickLogin() {
-        cy.xdblclick( this.loginLink);
+        cy.xdblclick(this.loginLink);
     }
 }

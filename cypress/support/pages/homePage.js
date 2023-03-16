@@ -1,10 +1,10 @@
-export class HomePage{
+export class HomePage {
 
-    constructor(){
-       this.onlineShopLink='#onlineshoplink';
+    constructor() {
+        this.onlineShopLink = '#onlineshoplink';
     }
 
-    clickOnlineShop(){
+    clickOnlineShop() {
         cy.gclick(this.onlineShopLink);
     }
 }

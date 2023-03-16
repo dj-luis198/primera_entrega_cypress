@@ -1,10 +1,10 @@
 {
     "product1":{
         "name":"White Shoes",
-        "price":"18"
+        "price":30
     },
     "product2":{
         "name":"Beige Shorts",
-        "price":"19"
+        "price":19
     }
 }
