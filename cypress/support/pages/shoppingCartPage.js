@@ -4,8 +4,9 @@ export class ShoppingCartPage {
 
     constructor() {
         this.titleH2 = '#title';
-        this.showTotalPriceButton = '//button[text()="Show total price"]';
+        this.showTotalPriceButton = 'Show total price';
         this.totalP = '#price';
+        this.goToCheckoutButton='Go to Checkout';
     }
 
     returnTitle() {
@@ -13,22 +14,26 @@ export class ShoppingCartPage {
     }
 
     clickShowTotalPrice() {
-        cy.xclick(this.showTotalPriceButton);
+        cy.cclick(this.showTotalPriceButton);
     }
 
     returnProductLength() {
-        return cy.xpath('//p[@id="productName"]');
+        return cy.get('p[id="productName"]');
     }
 
     returnProductName(name) {
-        return cy.xpath(`//p[@name="${name}"]`);
+        return cy.get(`p[name="${name}"]`);
     }
 
     returnProductPrice(name) {
-        return cy.xpath(`//p[@name="${name}"]//following-sibling::p[@id="productPrice"]`);
+        return cy.get(`p[name="${name}"]`).siblings('p[id="productPrice"]');
     }
 
     returnTotal() {
         return cy.get(this.totalP);
+    }
+
+    clickGoToCheckout() {
+        cy.cclick(this.goToCheckoutButton);
     }
 }
