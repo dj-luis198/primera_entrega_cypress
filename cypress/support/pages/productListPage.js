@@ -5,8 +5,7 @@ export class ProductListPage {
     constructor() {
         this.titleH2 = '#title';
         this.goShoppingCartButton = '#goShoppingCart';
-        this.headerAlert = '//header[text()="Message alert"]';
-        this.closeButton = '//button[@id="closeModal"]';
+        this.closeButton = '#closeModal';
     }
 
     returnTitle() {
@@ -14,7 +13,7 @@ export class ProductListPage {
     }
 
     clickClose() {
-        cy.xclick(this.closeButton);
+        cy.gclick(this.closeButton);
     }
 
     clickGoShoppingCart() {
@@ -22,7 +21,7 @@ export class ProductListPage {
     }
 
     clickAddToCart(product) {
-        cy.xclick(`//p[text()="${product}"]//following-sibling::button[text()="Add to cart"]`);
+        cy.contains(product).siblings('button').click();
         this.clickClose();
     }
 }
